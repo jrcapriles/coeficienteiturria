@@ -18,6 +18,33 @@ team_names = {"1" : "Tibu de la gente",
               "11": "TheMBullets",
               "12": "Nordics" }
 
+plot_linestyles =  {"1" : "",
+                    "2" : "",
+                    "3" : "",
+                    "4" : "",
+                    "5" : "",
+                    "6" : "",
+                    "7" : "",
+                    "8" : "--",
+                    "9" : "--",
+                    "10": "--",
+                    "11": "--",
+                    "12": "--" }
+
+
+plot_colors =  {"1" : "b",
+                "2" : "g",
+                "3" : "r",
+                "4" : "c",
+                "5" : "m",
+                "6" : "y",
+                "7" : "k",
+                "8" : "b",
+                "9" : "g",
+                "10": "r",
+                "11": "c",
+                "12": "k" }
+
 
 json_dic = open("data/ci_accum_by_date.json", "r")
 data = json.load(json_dic)
@@ -62,13 +89,13 @@ ax = fig.add_subplot(111)
 
 for key in team_names:
     print team_names[key]
-    ax.plot(date, teams[key][1:], label=team_names[key].decode('unicode-escape'))
+    ax.plot(date, teams[key][1:], plot_linestyles[key], color=plot_colors[key], label=team_names[key].decode('unicode-escape'), markersize=10)
 
 handles, labels = ax.get_legend_handles_labels()
 lgd = ax.legend(handles, labels, loc='center left', bbox_to_anchor=(1,0.5))
 ax.grid('on')
 
-fig.savefig('../img/ci_figure.jpg', bbox_extra_artists=(lgd,), bbox_inches='tight')
+fig.savefig('/home/joser/Workspace/FANTASY/coeficienteiturria.github.io/img/ci_figure.jpg', bbox_extra_artists=(lgd,), bbox_inches='tight')
 
 
 #legend = ax.legend(loc='center left', bbox_to_anchor=(1, 0.5)) #(loc='upper center', shadow=True)
