@@ -82,7 +82,7 @@ for i in data:
 print date
 print teams 
 
-fig = plt.figure(1)
+fig = plt.figure(figsize=(14.0, 9.0))
 ax = fig.add_subplot(111)
 
 #fig, ax = plt.subplots()
@@ -95,7 +95,7 @@ handles, labels = ax.get_legend_handles_labels()
 lgd = ax.legend(handles, labels, loc='center left', bbox_to_anchor=(1,0.5))
 ax.grid('on')
 
-fig.savefig('img/ci_figure.jpg', bbox_extra_artists=(lgd,), bbox_inches='tight')
+fig.savefig('img/ci_figure.jpg', bbox_extra_artists=(lgd,), bbox_inches='tight', dpi=100)
 
 
 #legend = ax.legend(loc='center left', bbox_to_anchor=(1, 0.5)) #(loc='upper center', shadow=True)
