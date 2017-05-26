@@ -95,7 +95,7 @@ handles, labels = ax.get_legend_handles_labels()
 lgd = ax.legend(handles, labels, loc='center left', bbox_to_anchor=(1,0.5))
 ax.grid('on')
 
-fig.savefig('/home/joser/Workspace/FANTASY/coeficienteiturria.github.io/img/ci_figure.jpg', bbox_extra_artists=(lgd,), bbox_inches='tight')
+fig.savefig('img/ci_figure.jpg', bbox_extra_artists=(lgd,), bbox_inches='tight')
 
 
 #legend = ax.legend(loc='center left', bbox_to_anchor=(1, 0.5)) #(loc='upper center', shadow=True)
